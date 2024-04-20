@@ -15,7 +15,7 @@ public class OrderEntity
 
     [Required]
     [Column("username")]
-    public string Username { get; set; }
+    public string UserName { get; set; }
 
     [Required]
     [Column("email")]
@@ -63,26 +63,6 @@ public class OrderEntity
 
     [Required]
     [Column("order_modification")]
-    public DateTime OrderModification { get; set; }
-
-
-    public OrderEntity(int orderId, int userId, string username, string email, string contactNumber, string countryCode, string departmentCode, string cityCode, string address, decimal subtotalPrice, decimal totalTaxes, decimal totalPrice, int paymentId, int trackingId, DateTime orderModification)
-    {
-        OrderId = orderId;
-        UserId = userId;
-        Username = username;
-        Email = email;
-        ContactNumber = contactNumber;
-        CountryCode = countryCode;
-        DepartmentCode = departmentCode;
-        CityCode = cityCode;
-        Address = address;
-        SubtotalPrice = subtotalPrice;
-        TotalTaxes = totalTaxes;
-        TotalPrice = totalPrice;
-        PaymentId = paymentId;
-        TrackingId = trackingId;
-        OrderModification = orderModification;
-    }
+    public DateTime OrderModification { get; set; } = DateTime.Now;
 
 }

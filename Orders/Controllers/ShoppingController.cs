@@ -16,23 +16,17 @@ namespace Orders.Controllers
             _shoppingCarService = shoppingCarService;
         }
 
-        [HttpPost("customdata")]
-        public async Task<IActionResult> GetCustomData([FromBody] UserData userdata)
+        [HttpPost("checkout")]
+        public async Task<IActionResult> GetCustomData([FromBody] UserDataDTO userdata)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            try
-            {
-                var result = await _shoppingCarService.GetCustomDataAsync(userdata.userId, userdata.statusId);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
+            var result = await _shoppingCarService.GetCustomDataAsync(userdata.userId, userdata.statusId);
+            return Ok(result);
+            
         }
     }
 }

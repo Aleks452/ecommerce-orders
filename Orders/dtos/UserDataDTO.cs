@@ -2,7 +2,7 @@
 
 namespace Orders.dtos
 {
-    public class UserData
+    public class UserDataDTO
     {
         [Range(1, int.MaxValue, ErrorMessage = "UserId must be greater than 0")]
         public int userId {  get; set; }

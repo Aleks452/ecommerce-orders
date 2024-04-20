@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IShoppingCarService, ShoppingCarService>();
-
+builder.Services.AddScoped<IPaymentService, PaymentService>();
 
 // Add services to the container.
 builder.Services.AddEntityFrameworkMySQL()

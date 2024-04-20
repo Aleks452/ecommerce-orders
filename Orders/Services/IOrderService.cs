@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Orders.dtos;
 using System.Linq;
 
 namespace Orders.Services
 {
     public interface IOrderService
     {
-        IEnumerable<OrderEntity> GetOrders();
+        Task<IEnumerable<UserOrdersConsolidateDTO>> GetOrdersAsync(int userId);
+
+        Task<bool> AddOrderAsync(ShoppingCheckoutDTO shoppingCheckoutDTO);
     }
 }

@@ -15,6 +15,7 @@ namespace Orders.Entities
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<PaymentsEntity> Payments { get; set; }
         public DbSet<LocationEntity> Locations { get; set; }
+        public DbSet<TrackingEntity> Trackings { get; set; }
 
         // It is necesarry if you has compost keys
         protected override void OnModelCreating(ModelBuilder modelBuilder)
